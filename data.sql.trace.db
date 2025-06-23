@@ -1,9 +1,0 @@
-2025-06-19 00:06:18.356770-05:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found (this database is empty); SQL statement:
-INSERT INTO usuario (id, username, password, email, rol) VALUES (1, 'admin', '$2a$12$VzAdD3x8QbzPIVxpoekCXuVv4GLvlYS.JbBH6aav9TAIO2FrZngqi', 'admin@email.com', 'ADMIN') [42104-224]
-2025-06-19 00:06:48.142925-05:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found (this database is empty); SQL statement:
-INSERT INTO usuario (id, username, password, email, rol) VALUES (1, 'admin', '$2a$12$VzAdD3x8QbzPIVxpoekCXuVv4GLvlYS.JbBH6aav9TAIO2FrZngqi', 'admin@email.com', 'ADMIN') [42104-224]
-2025-06-19 00:07:05.512796-05:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found (this database is empty); SQL statement:
-INSERT INTO usuario (id, username, password, email, rol) VALUES (1, 'admin', '$2a$12$VzAdD3x8QbzPIVxpoekCXuVv4GLvlYS.JbBH6aav9TAIO2FrZngqi', 'admin@email.com', 'ADMIN') [42104-224]
