@@ -13,7 +13,10 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:4200") // Agrega aquí la URL de producción también
+                        .allowedOrigins("http://localhost:4200", "https://podology-diale.netlify.app") // Agrega aquí la
+                                                                                                       // URL de
+                                                                                                       // producción
+                                                                                                       // también
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
