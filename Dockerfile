@@ -11,7 +11,7 @@ COPY . /app
 RUN chmod +x mvnw
 
 # Compila el proyecto
-RUN mvn clean install
+RUN ./mvnw clean install
 
 # Expone el puerto (el mismo que usa tu app, usualmente 8080)
 EXPOSE 8080
