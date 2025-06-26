@@ -2,6 +2,7 @@ package com.jangelcode.spring.app.service.impl;
 
 import com.jangelcode.spring.app.dto.PedidoDTO;
 import com.jangelcode.spring.app.dto.PedidoRequest;
+import com.jangelcode.spring.app.entity.EstadoPedido;
 import com.jangelcode.spring.app.entity.Pedido;
 import com.jangelcode.spring.app.entity.PedidoProducto;
 import com.jangelcode.spring.app.entity.ProductoMagistral;
@@ -97,5 +98,18 @@ public class PedidoServiceImpl implements PedidoService {
     public Page<PedidoDTO> findByFechaPedidoAfter(LocalDateTime fecha, Pageable pageable) {
         return pedidoRepository.findByFechaPedidoAfter(fecha, pageable)
                 .map(PedidoMapper::toDTO);
+    }
+
+    @Override
+    public PedidoDTO actualizarEstado(Long id, String nuevoEstado) {
+        Pedido pedido = pedidoRepository.findById(id).orElseThrow(() -> new RuntimeException("Pedido no encontrado"));
+        if (nuevoEstado != null) {
+            try {
+                pedido.setEstado(EstadoPedido.valueOf(nuevoEstado.toUpperCase()));
+            } catch (IllegalArgumentException e) {
+                throw new RuntimeException("Estado no válido: " + nuevoEstado);
+            }
+        }
+        return PedidoMapper.toDTO(pedidoRepository.save(pedido));
     }
 }

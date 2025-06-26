@@ -16,4 +16,6 @@ public interface PedidoService {
     List<PedidoDTO> getPedidos();
 
     Page<PedidoDTO> findByFechaPedidoAfter(LocalDateTime fecha, Pageable pageable);
+
+    PedidoDTO actualizarEstado(Long id, String nuevoEstado);
 }

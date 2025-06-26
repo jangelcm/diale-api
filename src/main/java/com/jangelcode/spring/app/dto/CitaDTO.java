@@ -10,6 +10,8 @@ public class CitaDTO {
     private LocalDate fecha;
     private LocalTime hora;
     private String username;
+    private String estado; // Pendiente, Confirmada, Cancelada, Atendida
+    private Integer codigoEstado;
 
     // getters y setters
     public Long getId() {
@@ -58,5 +60,21 @@ public class CitaDTO {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public Integer getCodigoEstado() {
+        return codigoEstado;
+    }
+
+    public void setCodigoEstado(Integer codigoEstado) {
+        this.codigoEstado = codigoEstado;
     }
 }

@@ -11,6 +11,8 @@ public class PedidoDTO {
     private String telefonoContacto;
     private String comprobanteUrl;
     private LocalDateTime fechaPedido;
+    private String estado; // EN_PROCESO, ACEPTADO, EN_CAMINO, LISTO_PARA_RECOGER, ENTREGADO, CANCELADO
+    private Integer codigoEstado;
 
     public Long getId() {
         return id;
@@ -66,5 +68,21 @@ public class PedidoDTO {
 
     public void setFechaPedido(LocalDateTime fechaPedido) {
         this.fechaPedido = fechaPedido;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public Integer getCodigoEstado() {
+        return codigoEstado;
+    }
+
+    public void setCodigoEstado(Integer codigoEstado) {
+        this.codigoEstado = codigoEstado;
     }
 }

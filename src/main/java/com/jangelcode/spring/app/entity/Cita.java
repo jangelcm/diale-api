@@ -14,6 +14,9 @@ public class Cita {
     private LocalDate fecha;
     private LocalTime hora;
 
+    @Enumerated(EnumType.STRING)
+    private EstadoCita estado;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
@@ -57,6 +60,14 @@ public class Cita {
 
     public void setHora(LocalTime hora) {
         this.hora = hora;
+    }
+
+    public EstadoCita getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoCita estado) {
+        this.estado = estado;
     }
 
     public Usuario getUsuario() {

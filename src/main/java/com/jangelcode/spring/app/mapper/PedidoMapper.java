@@ -2,6 +2,7 @@ package com.jangelcode.spring.app.mapper;
 
 import com.jangelcode.spring.app.dto.PedidoDTO;
 import com.jangelcode.spring.app.dto.PedidoProductoDTO;
+import com.jangelcode.spring.app.entity.EstadoPedido;
 import com.jangelcode.spring.app.entity.Pedido;
 import com.jangelcode.spring.app.entity.PedidoProducto;
 
@@ -20,6 +21,10 @@ public class PedidoMapper {
         dto.setTelefonoContacto(entity.getTelefonoContacto());
         dto.setComprobanteUrl(entity.getComprobanteUrl());
         dto.setFechaPedido(entity.getFechaPedido());
+        if (entity.getEstado() != null) {
+            dto.setEstado(entity.getEstado().name());
+            dto.setCodigoEstado(entity.getEstado().getCodigo());
+        }
         return dto;
     }
 
@@ -34,5 +39,19 @@ public class PedidoMapper {
 
     public static List<PedidoDTO> toDTOList(List<Pedido> entities) {
         return entities.stream().map(PedidoMapper::toDTO).collect(Collectors.toList());
+    }
+
+    public static Pedido toEntity(PedidoDTO dto) {
+        Pedido entity = new Pedido();
+        entity.setId(dto.getId());
+        // ...asignar otros campos...
+        if (dto.getEstado() != null) {
+            try {
+                entity.setEstado(EstadoPedido.valueOf(dto.getEstado().toUpperCase()));
+            } catch (IllegalArgumentException e) {
+                entity.setEstado(null);
+            }
+        }
+        return entity;
     }
 }

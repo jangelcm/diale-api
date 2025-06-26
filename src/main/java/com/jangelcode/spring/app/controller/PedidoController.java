@@ -43,4 +43,10 @@ public class PedidoController {
         LocalDateTime fechaDesde = fechaPedido.atStartOfDay();
         return pedidoService.findByFechaPedidoAfter(fechaDesde, pageable);
     }
+
+    @PatchMapping("/{id}/estado")
+    public ResponseEntity<PedidoDTO> actualizarEstado(@PathVariable Long id, @RequestBody String nuevoEstado) {
+        PedidoDTO pedidoActualizado = pedidoService.actualizarEstado(id, nuevoEstado);
+        return ResponseEntity.ok(pedidoActualizado);
+    }
 }

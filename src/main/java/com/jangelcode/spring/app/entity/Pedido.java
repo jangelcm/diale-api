@@ -25,4 +25,6 @@ public class Pedido {
     private String comprobanteUrl;
     private LocalDateTime fechaPedido;
 
+    @Enumerated(EnumType.STRING)
+    private EstadoPedido estado;
 }
