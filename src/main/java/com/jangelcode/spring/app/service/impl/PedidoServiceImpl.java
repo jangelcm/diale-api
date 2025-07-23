@@ -102,7 +102,8 @@ public class PedidoServiceImpl implements PedidoService {
 
     @Override
     public PedidoDTO actualizarEstado(Long id, String nuevoEstado) {
-        Pedido pedido = pedidoRepository.findById(id).orElseThrow(() -> new RuntimeException("Pedido no encontrado"));
+        Pedido pedido = pedidoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Pedido no encontrado"));
         if (nuevoEstado != null) {
             try {
                 pedido.setEstado(EstadoPedido.valueOf(nuevoEstado.toUpperCase()));
