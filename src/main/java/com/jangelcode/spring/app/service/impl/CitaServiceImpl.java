@@ -11,7 +11,6 @@ import com.jangelcode.spring.app.repository.UsuarioRepository;
 import com.jangelcode.spring.app.service.CitaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
