@@ -3,6 +3,7 @@ package com.jangelcode.spring.app.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "producto_magistral")
 public class ProductoMagistral {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

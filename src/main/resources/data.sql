@@ -8,7 +8,7 @@
 --   (2, 'Talco Antihongos', 'Talco para prevenir hongos en los pies', 15.00, 50, '/public/preparados-magistrales/16e2f868-14f1-4745-a394-dd2823d3b086-laser.jpg');
 
 -- Establecer el próximo valor de id para usuario en 2
-ALTER TABLE usuario ALTER COLUMN id RESTART WITH 2;
+-- ALTER TABLE usuario ALTER COLUMN id RESTART WITH 2;
 
 -- Establecer el próximo valor de id para producto_magistral en 3
-ALTER TABLE producto_magistral ALTER COLUMN id RESTART WITH 3;
+-- ALTER TABLE producto_magistral ALTER COLUMN id RESTART WITH 3;
